@@ -1,8 +1,24 @@
-export function add(a: number, b: number): number {
-  return a + b;
-}
+import { Application, Router, RouterContext } from "https://deno.land/x/oak@v6.5.0/mod.ts";
 
-// Learn more at https://deno.land/manual/examples/module_metadata#concepts
-if (import.meta.main) {
-  console.log("Add 2 + 3 =", add(2, 3));
-}
+const app = new Application();
+const router = new Router();
+
+app.addEventListener("listen", ({ hostname, port, secure }) => {
+  console.log(
+    `Listening on: ${secure ? "https://" : "http://"}${hostname ??
+      "localhost"}:${port}`,
+  );
+});
+
+app.addEventListener("error", (evt) => {
+  console.log(evt.error);
+});
+
+router.get('/', (ctx: RouterContext) => {
+  ctx.response.body = "Hello World!";
+})
+
+app.use(router.routes());
+app.use(router.allowedMethods());
+
+await app.listen({ port: 8080 });
