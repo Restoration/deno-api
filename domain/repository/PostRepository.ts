@@ -1,5 +1,7 @@
-import Post from 'domain/model/Post'
+import Post from '../model/Post'
 
-export abstract default class IPostRepository {
-	async FindAll():Promise<Post>
+interface IPostRepository {
+	FindAll(): Promise<Post[]> 
 }
+
+export default IPostRepository;

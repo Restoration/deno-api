@@ -1,8 +1,10 @@
+import IPostUseCase from '../domain/usecase/PostUseCase'
 
 class PostController {
-	constructor(private readonly postUseCase: PostUseCase){}
+	constructor(private readonly postUseCase: IPostUseCase){}
 	public async FindAll(){
-		return await postUseCase.FindAll().then(r => r)
+		return await this.postUseCase.FindAll().then(r => r)
 	}
 }
 
+export default PostController;
