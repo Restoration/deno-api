@@ -1,7 +1,7 @@
 import { Application, Router, RouterContext } from "https://deno.land/x/oak@v6.5.0/mod.ts";
-import PostController from './presenter/PostController';
-import PostInteractor from './application/PostInteractor';
-import PostRepository from './repository/PostRepository';
+import PostController from './presenter/PostController.ts';
+import PostInteractor from './application/PostInteractor.ts';
+import PostRepository from './repository/PostRepository.ts';
 
 
 const app = new Application();

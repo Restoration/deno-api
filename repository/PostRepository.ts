@@ -1,5 +1,5 @@
-import Post from '../domain/model/Post';
-import IPostRepository from '../domain/repository/PostRepository'
+import Post from '../domain/model/Post.ts';
+import IPostRepository from '../domain/repository/PostRepository.ts'
 
 class PostRepository implements IPostRepository {
   public async FindAll(): Promise<Post[]>{

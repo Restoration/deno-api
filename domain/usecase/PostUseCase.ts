@@ -1,4 +1,4 @@
-import Post from '../model/Post';
+import Post from '../model/Post.ts';
 
 interface PostUseCase {
     FindAll(): Promise<Post[]>;

@@ -1,4 +1,4 @@
-import IPostUseCase from '../domain/usecase/PostUseCase'
+import IPostUseCase from '../domain/usecase/PostUseCase.ts'
 
 class PostController {
 	constructor(private readonly postUseCase: IPostUseCase){}
